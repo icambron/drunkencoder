@@ -9,4 +9,3 @@ tmp/**/*
 .#*
 bin/**
 .sass-cache/**
-Gemfile.lock
