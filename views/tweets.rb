@@ -3,12 +3,16 @@ require 'twitter-text'
 class Tweets < Erector::Widget  
   include Twitter::Autolink
   def content
-    h2 "Twitter"
-    @tweets.each do |tweet|
-      p do
-        rawtext auto_link(tweet.text)
+    div :id => "tweets_area", :class => "widgety_thing" do
+      h2 "Twitter"
+      ul :class => "tweet_list" do
+        @tweets.each do |tweet|
+          li do
+            rawtext auto_link(tweet.text)
+          end
+        end
       end
+      a "Follow me", :href => "http://twitter.com/icambron"
     end
-    a "Follow me", :href => "http://twitter.com/icambron"
   end
 end

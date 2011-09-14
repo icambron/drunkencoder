@@ -30,7 +30,11 @@ end
 
 def get_tweets
   cache_stuff(:tweets, 10) do
-    Twitter.user_timeline("icambron", :count => 10)
+    begin
+      Twitter.user_timeline("icambron", :count => 10)
+    rescue
+      []
+    end
   end
 end
 

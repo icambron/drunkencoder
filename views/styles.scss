@@ -1,2 +1,91 @@
+$color0: #ebd9c0; //off-white
+$color1: #775741; //light brown
+$color2: #860800; //red
+$color3: #2b1d14; //dark brown
+$color4: #61753a; //puke green
+
+
+body {
+    background-color: $color0;
+    margin: 0;
+}
+
+h2 {
+    font-size: 15pt;
+    color: $color2;
+}
+
+a {
+    color: $color2;
+    text-decoration: none;
+}
+
+a:visited {
+    color: $color2;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+#content_wrapper {
+    min-width: 65em;
+    max-width: 85em;
+    margin: 20px auto;
+    width: 93%;
+}
+
+#title_area {
+    margin-left: 0;
+    margin-right: 0;
+    background-color: $color4;
+    h1 {
+        color: $color3;
+        float: left;
+        border-right: 1px solid $color2;
+        margin-left: 10px;
+        //margin: 0 0.5em 0.5em 0;
+        padding: 0 0.5em 0 0;
+        a {
+            color: $color3;
+        }
+    }
+    h2 {
+        float: left;
+        width: 300px;
+        margin-left: 10px;
+        font-size: 15pt;
+        color: $color3;
+    }
+}
+#content_area {
+    width: 600px;
+    float: left;
+    width: 67%;
+}
+
+.widgity_thing {
+}
+
+#sidebar {
+    margin-left: 30px;
+    width: 300px;
+    float: left;
+}
+
+.tweet_list {
+    li {
+        list-style-type: none;
+        padding-left: 2em;
+        background: url("/images/lil_bird.png") left 10% no-repeat;
+    }
+}
+
+
+.clear {
+    clear: both;
+}
+
+
 #disqus_thread {
 }
