@@ -5,6 +5,12 @@ class Layout < Erector::Widget
         title render_title
         css "/css/styles.css"
         css "/css/syntax.css"
+        
+        rawtext <<STUFF 
+<link rel='stylesheet' type='text/css' href='http://www.webputty.net/css/agtzfmNzc2ZpZGRsZXIMCxIEUGFnZRj-hBkM' />
+<script type='text/javascript'>(function(w,d){if(w.location!=w.parent.location||w.location.search.indexOf('__preview_css__')>-1){var t=d.createElement('script');t.type='text/javascript';t.async=true;t.src='http://www.webputty.net/js/agtzfmNzc2ZpZGRsZXIMCxIEUGFnZRj-hBkM';(d.body||d.documentElement).appendChild(t);}})(window,document);</script>
+STUFF
+        
       end
       body do
         h1 "Drunken Coder"
