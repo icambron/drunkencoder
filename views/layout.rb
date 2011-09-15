@@ -5,7 +5,7 @@ class Layout < Erector::Widget
         title render_title
         css "/css/styles.css"
         css "/css/syntax.css"
-        #link :href => "/feed.xml", :rel => "alternate", :type => "application/atom+xml"
+        link :href => "/feed.xml", :rel => "alternate", :type => "application/atom+xml"
       end
       body do
         div :id => "title_area" do
@@ -40,6 +40,18 @@ class Layout < Erector::Widget
             widget Tags.new(:tags => @tags)
           end
 
+          div :class => "clear"
+        end
+        
+        div :id => "footer" do
+          div do 
+            img :src => "/images/Attribution-ShareAlike.png"
+          end
+          p do
+            span "Content on this site is licensed under a "
+            a "Creative Commons Attribution-ShareAlike", :href => "http://creativecommons.org/licenses/by-sa/3.0/"
+            span "."
+          end
         end
       end
     end

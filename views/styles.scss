@@ -4,8 +4,13 @@ $color2: #860800; //red
 $color3: #2b1d14; //dark brown
 $color4: #61753a; //puke green
 
+* {
+    margin: 0;
+    padding: 0;
+}
 
 body {
+    padding-top: 0;
     background-color: $color0;
     margin: 0;
     font-family: sans-serif;
@@ -37,9 +42,13 @@ a:hover {
 }
 
 #title_area {
+    margin-top: 0;
     margin-left: 0;
     margin-right: 0;
     background-color: $color4;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    
     h1 {
         color: $color3;
         float: left;
@@ -65,18 +74,40 @@ a:hover {
     width: 67%;
 }
 
+.post {
+    margin-bottom: 20px;
+    h2 {
+        margin-bottom: 10px;
+    }
+
+    p {
+        margin-bottom: 10px;
+    }
+}
+
+.actual_blog_content {
+    margin-bottom: 1em;
+}
+
 .widgity_thing {
 }
 
 #sidebar {
-    margin-left: 30px;
+    margin-left: 35px;
     width: 300px;
     float: left;
 }
 
 .widgety_thing {
+    margin-bottom: 15px;
+
+    p {
+        margin-bottom: 10px;
+    }
+
     h2 {
-        border-bottom: 1px solid $color3
+        border-bottom: 1px solid $color3;
+        margin-bottom: 10px;
     }
 
     ul {
@@ -117,9 +148,6 @@ a:hover {
     }
 }
 
-.post_summary_date {
-}
-
 
 .clear {
     clear: both;
@@ -127,4 +155,17 @@ a:hover {
 
 
 #disqus_thread {
+    #dsq-subscribe {display: none}
+}
+
+#footer{
+    clear: both;
+    background-color: $color4;
+    height: 65px;
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 30px;
+    margin-bottom: 0;
+
+    padding: 10px;
 }

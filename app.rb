@@ -65,7 +65,8 @@ end
 
 get '/archive' do
   stuff = finder.find_posts(:tag => params[:tag])
-  render_class Archive, :posts => stuff, :title => "All posts. Ever."
+  title = params[:tag] ? "Posts tagged as \"#{params[:tag]}\"" : "All posts. Ever."
+  render_class Archive, :posts => stuff, :title => title
 end
 
 get '/feed.xml' do

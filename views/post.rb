@@ -4,16 +4,15 @@ class Post < Erector::Widget
       a :href => @model.linkify do
         h2 @model.title
       end
-      div do 
+      div :class => "actual_blog_content" do 
         rawtext @model.body
       end
       div :class => "post_tags" do
-        h3 "Tags"
-        ul do
-          @model.tags.each do |tag|
-            li do
-              a tag, :href => "/archive?tag=#{tag}"
-            end
+        span "Tags: "
+        @model.tags.each do |tag|
+          span do
+            a tag, :href => "/archive?tag=#{tag}"
+            span ", " if tag != @model.tags.last
           end
         end
       end
