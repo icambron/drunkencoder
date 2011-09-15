@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/icambron/ratom.git
-  revision: 408b99c19c33279770fa6db3a30e5714550d052c
+  revision: 38e90a1bc80aa6516171ee2f3fde3045cd5996a1
   specs:
     ratom (0.6.9)
       libxml-ruby (>= 1.1.2)
