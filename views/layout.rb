@@ -12,7 +12,10 @@ class Layout < Erector::Widget
           h1 do 
             a "Drunken Coder", :href => "/"
           end
-          h2 "The booze does the coding; I'm just here for the ride."
+          div :id => "tagline" do
+            h2 "The booze does the coding;"
+            h2 "I'm just here for the ride."
+          end
           div :class => "clear"
         end
           

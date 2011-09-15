@@ -1,8 +1,10 @@
-$color0: #ebd9c0; //off-white
-$color1: #775741; //light brown
-$color2: #860800; //red
-$color3: #2b1d14; //dark brown
-$color4: #61753a; //puke green
+$color0: #f4f2ed; //main background
+$color1: #000000; //text color
+$color2: #2b5d93; //links and subtitles
+$color3: #feae00; //main title and lines
+$color4: #2b5d93; //header, footer, subtitles
+
+$scratch: #516b8c;
 
 * {
     margin: 0;
@@ -14,6 +16,7 @@ body {
     background-color: $color0;
     margin: 0;
     font-family: sans-serif;
+    color: $color1;
 }
 
 h2 {
@@ -52,16 +55,21 @@ a:hover {
     h1 {
         color: $color3;
         float: left;
-        border-right: 1px solid $color2;
+        border-right: 1px solid $color3;
         margin-left: 10px;
-        //margin: 0 0.5em 0.5em 0;
         padding: 0 0.5em 0 0;
+        height: 50px;
         a {
             color: $color3;
         }
     }
-    h2 {
+
+    #tagline{
+        height: 50px;
         float: left;
+    }
+
+    h2 {
         width: 300px;
         margin-left: 10px;
         font-size: 15pt;
@@ -168,4 +176,11 @@ a:hover {
     margin-bottom: 0;
 
     padding: 10px;
+
+    color: $color3;
+
+    a, a:visited {
+        text-decoration: underline;
+        color: $color3;
+    }
 }
