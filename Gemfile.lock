@@ -56,7 +56,6 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  activesupport
   erector
   pygments.rb
   ratom
