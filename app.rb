@@ -33,6 +33,7 @@ def get_tweets
     begin
       Twitter.user_timeline("icambron", :count => 10)
     rescue
+      puts "Error getting tweets: #{$!}"
       []
     end
   end
