@@ -1,6 +1,7 @@
 require 'set'
 require 'time'
 require 'redcarpet'
+require 'atom'
 require_relative 'syntactical'
 
 # This is mostly stolen from Nesta, with a bunch of removals and assumptions.
@@ -42,6 +43,16 @@ class PostModel
 
   def linkify
     PostModel.linkify(@filename)
+  end
+
+  def to_atom_entry(root)
+    Atom::Entry.new do |entry|
+      entry.title = title
+      entry.updated = date
+      entry.id = "#{root},#{linkify}"
+      entry.links << Atom::Link.new(:href => "http://#{root}/#{linkify}")
+      entry.content = Atom::Content::Html.new(body)
+    end
   end
 
   private

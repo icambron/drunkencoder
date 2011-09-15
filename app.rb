@@ -68,6 +68,11 @@ get '/archive' do
   render_class Archive, :posts => stuff, :title => "All posts. Ever."
 end
 
+get '/feed.xml' do
+  content_type :xml, :charset => 'utf-8'
+  finder.atom_feed(10, 'Isaac', 'drunkencoder.net', '/feed.xml')
+end
+
 #stylesheeting
 get '/css/:sheet.css' do
   content_type 'text/css', :charset => 'utf-8'

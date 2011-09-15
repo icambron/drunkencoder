@@ -3,7 +3,7 @@ require 'twitter-text'
 class Tweets < Erector::Widget  
   include Twitter::Autolink
   def content
-    div :id => "tweets_area", :class => "widgety_thing" do
+    div :class => "widgety_thing" do
       h2 "Twitter"
       ul :class => "tweet_list" do
         @tweets.each do |tweet|

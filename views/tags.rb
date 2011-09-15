@@ -1,8 +1,8 @@
 class Tags < Erector::Widget
   def content
-    div :id => "tags_area", :class => "widgety_thing" do
+    div :class => "widgety_thing" do
       h2 "Tags"
-      ul do
+      ul :class => "tags_list" do
         @tags.each do |tag|
           li do
             a tag, :href => "archive?tag=#{tag}"

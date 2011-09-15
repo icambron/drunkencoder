@@ -8,6 +8,7 @@ $color4: #61753a; //puke green
 body {
     background-color: $color0;
     margin: 0;
+    font-family: sans-serif;
 }
 
 h2 {
@@ -73,12 +74,50 @@ a:hover {
     float: left;
 }
 
-.tweet_list {
+.widgety_thing {
+    h2 {
+        border-bottom: 1px solid $color3
+    }
+
+    ul {
+        padding-left: 0;
+    }
+
     li {
+        min-height: 22px;
         list-style-type: none;
         padding-left: 2em;
-        background: url("/images/lil_bird.png") left 10% no-repeat;
+        margin-bottom: 1em;    
     }
+
+    .github_link{
+        background: url("/images/lil_cat.png") left 10% no-repeat;
+    }
+
+    .atom_link{
+        background: url("/images/lil_rss.png") left 10% no-repeat;
+    }
+
+    .tweet_list {
+        li {   
+            background: url("/images/lil_bird.png") left 10% no-repeat;
+        }
+    }
+
+    .tags_list {
+        li {
+            background: url("/images/lil_tag.png") left 10% no-repeat;
+        }
+    }
+
+    .recent_list {
+        li {
+            background: url("/images/lil_speech.png") left 10% no-repeat;
+        }
+    }
+}
+
+.post_summary_date {
 }
 
 

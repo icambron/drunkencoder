@@ -5,7 +5,7 @@ class Layout < Erector::Widget
         title render_title
         css "/css/styles.css"
         css "/css/syntax.css"
-        
+        #link :href => "/feed.xml", :rel => "alternate", :type => "application/atom+xml"
       end
       body do
         div :id => "title_area" do
@@ -22,9 +22,17 @@ class Layout < Erector::Widget
           end
           
           div :id => "sidebar" do
-            div :id => "vanity_area", :class => "widgety_thing" do
+            div :class => "widgety_thing" do
               h2 "What"
-              p "Isaac Cambron. He's a geek. He drinks too much. This is his blog."
+              p "Isaac Cambron. He's a geek. He drinks a lot. This is his blog."
+              ul do
+                li :class => "atom_link" do
+                  a "Atom feed", :href => "/feed.xml"
+                end
+                li :class => "github_link" do
+                  a "Githubbery", :href => "http://github.com/icambron"
+                end
+              end
             end
 
             widget Tweets.new(:tweets => @tweets)
