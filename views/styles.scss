@@ -2,7 +2,7 @@ $color0: #f4f2ed; //main background
 $color1: #000000; //text color
 $color2: #2b5d93; //links and subtitles
 $color3: #feae00; //main title and lines
-$color4: #2b5d93; //header, footer, subtitles
+$color4: #2b5d93; //header, footer, subtitles. currently same as 2
 
 $scratch: #516b8c;
 
@@ -38,10 +38,12 @@ a:hover {
 }
 
 #content_wrapper {
-    min-width: 65em;
-    max-width: 85em;
     margin: 20px auto;
-    width: 93%;
+    min-width: 60em;
+    max-width: 70em;
+}
+
+#content_area {
 }
 
 #title_area {
