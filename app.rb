@@ -3,6 +3,7 @@ require 'erector'
 require 'sass'
 require 'twitter'
 require 'time'
+require 'spandex'
 
 ROOT = File.expand_path(File.dirname(__FILE__))
 $:.unshift ROOT
@@ -16,11 +17,14 @@ end
 
 @@cache = {}
 
+content_dir = File.expand_path('content', File.dirname(__FILE__))
+@@spandex = Spandex.new(content_dir, :fenced_code_blocks => true)
+
 def important_stuff
   @important_stuff ||= {
     :tweets => get_tweets,
     :recent => get_recent,
-    :tags => finder.all_tags
+    :tags => @@spandex.tags
   }
 end
 
@@ -40,11 +44,7 @@ def get_tweets
 end
 
 def get_recent
-  finder.find_posts.take(10)
-end
-
-def finder
-  @finder ||= PostFinder.new
+  @@spandex.all_articles.take(10)
 end
 
 #this is dumb - use something smarter here
@@ -60,19 +60,19 @@ end
 
 #index page, shows all the posts
 get '/' do
-  stuff = finder.find_posts().take(5)
+  stuff = @@spandex.all_articles.take(5)
   render_class Index, :posts => stuff
 end
 
 get '/archive' do
-  stuff = finder.find_posts(:tag => params[:tag])
+  stuff = @@spandex.find_articles(:tag => params[:tag])
   title = params[:tag] ? "Posts tagged as \"#{params[:tag]}\"" : "All posts. Ever."
   render_class Archive, :posts => stuff, :title => title
 end
 
 get '/feed.xml' do
   content_type :xml, :charset => 'utf-8'
-  finder.atom_feed(10, 'Isaac', 'drunkencoder.net', '/feed.xml')
+  @@spandex.atom_feed(10, 'Isaac', 'drunkencoder.net', '/feed.xml')
 end
 
 #stylesheeting
@@ -84,6 +84,6 @@ end
 #articles
 get '*' do
   parts = params[:splat].map { |p| p.sub(/\/$/, '') }
-  post = finder.find_by_path(File.join(parts))
+  post = @@spandex.get(File.join(parts))
   render_class PostPage, :post => post
 end

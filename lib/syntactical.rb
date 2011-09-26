@@ -8,3 +8,11 @@ class Syntactical < Redcarpet::Render::HTML
     highlight code, :lexer => lexer_name_for(:lexer => language)
   end
 end
+
+class SyntacticalTemplate < Tilt::RedcarpetTemplate::Redcarpet2
+  def generate_renderer
+    Syntactical
+  end
+end
+
+Tilt::register SyntacticalTemplate, 'isaac'
