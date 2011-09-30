@@ -20,6 +20,11 @@ end
 content_dir = File.expand_path('content', File.dirname(__FILE__))
 @@spandex = Spandex.new(content_dir, :fenced_code_blocks => true)
 
+Twitter.configure do |config|
+  config.consumer_key = ENV["TWITTER_KEY"]
+  config.consumer_secret = ENV["TWITTER_SECRET"]
+end
+
 def important_stuff
   @important_stuff ||= {
     :tweets => get_tweets,
