@@ -40,7 +40,7 @@ end
 def get_tweets
   cache_stuff(:tweets, 10) do
     begin
-      Twitter.user_timeline("icambron", :count => 10)
+      Twitter.user_timeline("icambron", :count => 5)
     rescue
       puts "Error getting tweets: #{$!}"
       []
