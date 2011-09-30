@@ -1,4 +1,4 @@
-require_relative 'base'
+require 'views/base'
 
 class Post < Base
   def content

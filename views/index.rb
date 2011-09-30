@@ -1,3 +1,5 @@
+require 'views/layout'
+
 class Index < Layout
   def render_content
     @posts.each do |thing|

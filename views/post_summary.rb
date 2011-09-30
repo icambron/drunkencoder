@@ -1,3 +1,5 @@
+require 'views/base'
+
 class PostSummary < Base
   def content
     a(:href => @post.path) do
