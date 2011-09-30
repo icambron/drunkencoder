@@ -1,3 +1,5 @@
+require 'views/base'
+
 class Layout < Base
   def content
     html do

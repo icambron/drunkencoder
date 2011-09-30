@@ -1,6 +1,7 @@
 require 'twitter-text'
+require 'views/base'
 
-class Tweets < Erector::Widget  
+class Tweets < Base
   include Twitter::Autolink
   def content
     div :class => "widgety_thing" do

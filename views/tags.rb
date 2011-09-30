@@ -1,4 +1,6 @@
-class Tags < Erector::Widget
+require 'views/base'
+
+class Tags < Base
   def content
     div :class => "widgety_thing" do
       h2 "Tags"
