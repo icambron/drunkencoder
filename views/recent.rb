@@ -1,4 +1,6 @@
-class Recent < Erector::Widget
+require_relative 'base'
+
+class Recent < Base
   def content
     div :class => "widgety_thing" do
       h2 "Recent Posts"

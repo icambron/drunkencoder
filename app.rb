@@ -28,7 +28,7 @@ end
 def important_stuff
   @important_stuff ||= {
     :tweets => get_tweets,
-    :recent => get_recent,
+    :recent =>  @@spandex.all_articles.take(10),
     :tags => @@spandex.tags
   }
 end
@@ -46,10 +46,6 @@ def get_tweets
       []
     end
   end
-end
-
-def get_recent
-  @@spandex.all_articles.take(10)
 end
 
 #this is dumb - use something smarter here

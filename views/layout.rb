@@ -1,4 +1,4 @@
-class Layout < Erector::Widget
+class Layout < Base
   def content
     html do
       head do
