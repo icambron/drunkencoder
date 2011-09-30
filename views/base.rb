@@ -1,5 +1,5 @@
 class Base < Erector::Widget
   def cal_date(date)
-    date.strftime("%y.%m.%d")
+    date.strftime("%Y.%m.%d")
   end
 end
