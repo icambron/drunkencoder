@@ -73,7 +73,7 @@ end
 
 get '/feed.xml' do
   content_type :xml, :charset => 'utf-8'
-  @@spandex.atom_feed(10, 'Isaac', 'drunkencoder.net', '/feed.xml')
+  @@spandex.atom_feed(10, "Drunken Coder", 'Isaac', 'drunkencoder.net', '/feed.xml')
 end
 
 #stylesheeting
