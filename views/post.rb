@@ -26,7 +26,20 @@ class Post < Base
         end
       end
       if @show_comments
-        widget Comments.new
+        div :id => "disqus_thread" do
+          if Sinatra::Application.environment == :development
+            javascript 'var disqus_developer = true;'
+          end
+          script :type => 'text/javascript', :src => "http://drunkencoder.disqus.com/embed.js", :async => true
+          
+          noscript do
+            a "view comments", :href => "http://drunkencoder.disqus.com/enbed.js?url=ref"
+          end
+        end
+      else
+        div :id => "view_comments" do
+          a "View comments", :href => @model.path + "#disqus_thread"
+        end
       end
     end
   end
