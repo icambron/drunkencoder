@@ -8,6 +8,7 @@ class Layout < Base
         css "/css/styles.css"
         css "/css/syntax.css"
         link :href => "/feed.xml", :rel => "alternate", :type => "application/atom+xml"
+        script :src => "/js/analytics.js"
       end
       body do
         div :id => "title_area" do
