@@ -83,7 +83,10 @@ end
 
 #articles
 get '*' do
-  parts = params[:splat].map { |p| p.sub(/\/$/, '') }
-  post = @@spandex.get(File.join(parts))
-  render_class PostPage, :post => post
+  post = @@spandex.get(params[:splat][0])
+  if post
+    render_class PostPage, :post => post
+  else 
+    404
+  end
 end

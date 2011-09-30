@@ -1,0 +1,149 @@
+Title: Introducing Spandex
+Date: 2011/9/29
+Tags: ruby, blogging, project intro
+
+So you're a programmer, and you want to start a blog. You've built some pretty cool opinions about software construction and that wine from dinner has you thinking the entire world has just *got* to know all about it. And maybe some neat posts about the aardvarks you've seen lately. Sitting down with your digestif, you get to work. You go the standard route: you find one of the dozen crummy WordPress hosts, pick a theme, and start typing your brilliance into a form in the admin section of your site. And it sorta works.
+
+But then you start thinking about it:
+
+ - Why can't you use your favorite editor? I mean, you spent all this time customizing the crap out of your Emacs experience, and now you're typing tons of content into a form in your *browser*?
+
+ - Man do these WISYWYG editors blow. Wouldn't you rather be using a nice markup language, like maybe something similar to what [StackOverflow](http://stackoverflow.com) uses?
+
+ - WP's admin interface is your content management system. But you're already very proficient with a much fancier, more powerful CMS; your source control system. You can use it from the command line instead of a clunky interface, and you can do a lot more with it. Why can't you use that?
+
+ - Your posts live in a database somewhere that you don't really have access to.
+
+ - No, but really, did I mention your WP host totally sucks ass? I guess you could install WP on an EC2 instance, but that seems like overkill, right? Maybe you could host it on [Heroku](http://heroku.com)?
+
+##A different model##
+
+A better idea might be a site that reads your posts from files (like, on the filesystem!) and generates web pages from them. Now you can manage those files in Git and edit them however you want. And if they're built on a cool stack, you'll be able to host it somewhere free and nice. So, you look around, and there are some pretty cool options:
+
+ - [Jekyll](https://github.com/mojombo/jekyll): Generate static HTML pages from Textile or Markdown files and then host them wherever you want.
+
+ - [Nesta](http://nestacms.com/): Dynamically generate a site from markup files. Themes, plugins, and all that jazz.
+
+ - [Toto](https://github.com/cloudhead/toto): Another dynamic site that generates the blog from static Markdown files.
+
+I'm sure there are others. I lean more towards the Nesta/Toto model of generating the HTML dynamically. That narrows my hosting options (because my host will have to be able to run whatever web framework the engine runs), but means there's less for me to actually do (I don't have to generate the site before pushing it to the host). But whatevs.
+
+##What's a blog, anyway?##
+
+But you're feeling a bit greedy and you want to do even more with less. So you think, what, in a technical sense, is a blog? It's two things: 1) a simple content management system that keeps track of your posts, figures out which ones to show your user, turns them into HTML, and generates an RSS feed; and 2) a web application to actually show those posts in. A blog engine tackles both things. 
+
+But here's the thing: you're good at building websites. You want to build your **own** website, where you control what the URLs mean, and how the framing markup gets generated, and all that jazz. Maybe you want to integrate the blog into an existing site. Maybe you want customize the framing HTML (you know the chrome stuff like the title and footer and sidebars), but you really *hate* HAML for some reason and Nesta uses it for just that purpose. And you don't really want to think about "themes"; you want to have some HTML and write some CSS for it, and that's that. The world has built you a bunch of awesome web frameworks for you build sites easily with, and dammit you want to use them. It's just the CMS part that's annoying; there has to be some code somewhere that pulls the right files off of disk and formats them when the user, say, clicks on the links for posts tagged "aardvarks". (You love aardvarks, it turns out. No one is sure why.)
+
+I'm going to assume, for no real reason, that you're the kind of programmer who likes Ruby. It's a good thing you are, because I have some good news: **I wrote you the piece that does all the content management**. It's called Spandex.
+
+##Spandex!##
+
+OK, so first of all, what kind of abject moron names a programming library "spandex"? When you hear it, all you can think about is this:
+
+<iframe width="420" height="315" src="http://www.youtube.com/embed/J1c2KzJbcGA" frameborder="0" allowfullscreen></iframe>
+
+Yeah, I don't know. The gem name wasn't taken. Anyway, Spandex lets you do stuff like:
+
+```ruby
+some_posts = spandex.find_articles(:tag => 'aardvarks')
+some_posts.each do |post|
+  puts "Title: #{post.title}"
+  puts "Stuff about aardvarks: #{post.body}"
+end
+```
+
+How do you make these awesome posts about aardvarks? Here's omg_aardvarks.md:
+
+```
+Title: Oh my God I saw some aardvarks!
+Tags: aardvarks, things i saw today
+Date: 2011/9/2011
+
+I was just riding my bike down the street and **LO AND BEHOLD**, an aardvark!!!
+```
+
+Yeah, your aardvark obsession is a bit creepy; let's more on. The top part of the file consists of key-value pairs that provide metadata to Spandex. Stuff like whether it's in draft. The bottom is the content. You can write it in any markup language supported by [Tilt](https://github.com/rtomayko/tilt); it'll decide which to use based on the extension. And you can customize that through Tilt itself.
+
+There are a lot more details, examples, and awkward non sequiturs on Spandex's [Github page](https://github.com/icambron/spandex).
+
+Sounds easy, right? So finish your glass of port, get a sixpack of beer, and let's build a blog.
+
+##Build ye blog##
+
+You're going to want to start simple. A blog with some posts, an about page, something allows all of your avid fans to comment, and an atom feed.
+
+Let's get to work. We've got our spandex on, so now we just need to build a website. Let's use [Sinatra](http://sinatrarb.com), [Haml](http://haml-lang.com/) (which I guess you don't hate after all), and the SCSS variety of [Sass](http://sass-lang.com/). OK, here's our directory structure:
+
+```   
+   +- app.rb              # Your Sinatra app
+   |
+   +- config.ru           # Config file for making Sinatra sing. Get it?
+   |
+   +-content/             # Bucket of your content
+   | |
+   | +- omg_aarvarks.md   # Your first post!
+   | |
+   | +- about.md          # Some stuff about you
+   |
+   +- views/              # HTML templates for the chrome
+      |
+      +- index.haml       # Shows all of the posts in descending order
+      |
+      +- layout.haml      # Title bars and such
+      |
+      +- page.haml        # Display and individual post and its comments
+```
+        
+So, app.rb handles the web requests:
+
+```ruby
+require 'sinatra'
+require 'spandex'
+require 'haml'
+
+content_dir = File.expand_path('content', File.dirname(__FILE__))
+@@spandex = Spandex.new(content_dir)
+
+#render the index
+get '/' do
+  posts = @@spandex.all_articles
+  haml :index, :locals => {:posts => posts}
+end
+
+# render the atom feed
+get '/feed.xml' do
+  content_type :xml, :charset => 'utf-8'
+  @@spandex.atom_feed(10, 'Your name here', 'tinyblog.net', '/feed.xml')
+end
+
+# render stylesheets
+get '/css/:sheet.css' do
+  content_type 'text/css', :charset => 'utf-8'
+  scss params[:sheet].to_sym
+end
+
+#render individual posts
+get '*' do
+  post = @@spandex.get(params[:splat][0])
+  haml :page, :locals => {:post =>  post, :show_comments => true}
+end
+```
+
+The Haml files are also pretty simple. I won't cover all of the details, but here's page.haml:
+
+```haml
+%h2
+  %a{:href => post.path}= post.title
+%div= post.body
+- if show_comments && ENV["DISQUS_NAME"]
+  - if Sinatra::Application.environment == :development
+    %script var disqus_developer = true;
+  #disqus_thread
+  %script{:type => 'text/javascript', :src => "http://#{ENV['DISQUS_NAME']}.disqus.com/embed.js", :async => true}
+```
+
+That shows a single post and pulls in comments from [Disqus](disqus.com).
+
+You can run the whole thing with `shotgun config.ru` or you can just check it into Git and push the whole thing to Heroku. The source for the entire tiny blog is [here](https://github.com/icambron/tinyblogofdoom). Check it out! DO IT NOW.
+
+You can also check out the [code to this blog](https://github.com/icambron/drunkencoder), which naturally uses Spandex, and does some other neato things.

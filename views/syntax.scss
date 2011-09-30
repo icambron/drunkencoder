@@ -1,11 +1,13 @@
 .highlight {
     background-color: black;
     padding: 10px;
+    margin-bottom: 1.5em;
+    color: white;
 
     pre {
         font-family: DejaVu Sans Mono, Lucida Console, Monaco, monospace;
         font-size: 12pt;
-        overflow-x: scroll;
+        overflow-x: auto;
     }
 
     .hll { background-color: #ffffcc }

@@ -2,10 +2,9 @@ class Post < Erector::Widget
   def content
     div :class => "post" do
       a :href => @model.path do
-        h2 @model.title
+        h1 @model.title
       end
       div :class => "actual_blog_content" do 
-        puts @model.extension
         rawtext @model.body
       end
       div :class => "post_tags" do

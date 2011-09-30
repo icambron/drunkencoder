@@ -7,9 +7,9 @@ GIT
 
 GIT
   remote: git@github.com:icambron/spandex.git
-  revision: e5ca1a88d3ce57548d8785c8e41ce9f2cc6cde6a
+  revision: 6102361219dc61b8a531d513bbe02a07483b15b5
   specs:
-    spandex (0.0.1)
+    spandex (0.0.2)
       ratom
       tilt
 
