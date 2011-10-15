@@ -9,8 +9,8 @@ gem 'twitter'
 gem 'twitter-text'
 gem 'ratom'
 gem 'i18n'
-gem 'spandex', :path => "~/Code/spandex"
-
+gem 'spandex'
+    
 group :development do
   gem 'shotgun'
 end
