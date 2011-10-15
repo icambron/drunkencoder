@@ -1,0 +1,31 @@
+Title: Programming Languages Matter
+Date: 2011/10/14
+Tags: programming
+
+[Ben Bitdiddle and Alyssa P. Hacker](http://en.wikipedia.org/wiki/Structure_and_Interpretation_of_Computer_Programs#Characters) are at a bar, at least three martinis deep. You're at nearby table and overhear their loud conversation:
+
+> **BB**: I don't want that job, because I'm a Java programmer and they're a Python shop, and--
+
+> **APH**: What do you mean, you're a "Java programmer"?
+
+> **BB**: Well, you know, some people are Perl programmers, and other people are Java programmers, and other--
+
+> **APH**: No. Of all the stupid ways you can sort programmers into buckets--back-end vs front-end, application vs operating system, enterprise vs consumer--why would you choose to define yourself by the programming language you typically use?
+
+> **BB**: Well, I know Java. I don't know Python. It says "Java programmer" next to my name on my resume.
+
+> **APH**: If you want to put yourself into a box, then define yourself by the kinds of problems you want to solve, your style of problem solving, or something like that. A programming language is a tool; within certain parameters, you can do anything with any of them. I mean, honestly, how long does it take you to learn a new language? Some new syntax should be trivial compared to learning, say, how to architect a scalable system, and that's the same in any language.
+
+Then you go back to whatever more interesting conversation you were having. You're pretty sure they go home together and have loud, punny sex. But let's talk about what they said. To a first order approximation, APH > BB. As Steve Yegge has [observed](http://steve-yegge.blogspot.com/2007/12/codes-worst-enemy.html), "an 'X programmer', for any value of X, is a weak player." It's true enough, and I'm always annoyed when I'm called a [whatever language I'm using at the time] programmer. But APH is very wrong about *why* BB shouldn't care so much about his Java identity.
+
+Defining yourself as, say, a Java programmer has some serious pitfalls. First, Java isn't the right tool for every job, and in fact is very awkward for some of them. As a trivial example, you wouldn't use it to write a shell script to copy around some files. I think everyone gets that it's just too verbose and structured to do job well.
+
+To generalize that, the reason BB and APH are both wrong is that defining yourself by a language limits your thinking. Like a real-life spoken language, you can't think about [things you can't put into words](http://plato.stanford.edu/entries/language-thought/). Language isn't a way of capturing thoughts; it's the building blocks of those thoughts. To give a simplistic example, people in some primitive cultures can't differentiate green and yellow because they don't have different words for them. Similarly, if you're stuck thinking in Java (and you are, even if you're thinking about something wildly abstract, like APH's "architecting scalable systems", whatever that means), then you're missing entire programming paradigms, and the chances are you're building something the wrong way. Maybe the best way to think about structuring your program is in terms of Lisp macros or Haskell existential types or continuations or Erlang actors or Node events or monads. But those aren't primitives you know, so you can't build the higher-level structures of your program around them.
+
+And worse, *you don't even know it*. You can't even conceptualize it. If you'd never seen a "scripting" language, you *would* start your little file-copying programs with `public static void main(String[] args)`, and you wouldn't think anything of it. It would just be The Way Things Are Done.
+
+In any language, I find myself mixing and matching programming paradigms borrowed from other languages, or approximating language features I don't have available. Java programmers sometimes fake closures by creating anonymous inner types, and while it's a pretty crummy approximation, it goes a long way towards solving some otherwise painful programming problems. But first you have to know what a closure is and what it's good for. And you might know that because you've worked with programming languages where functions are first-class. To get more exotic, if I knew Haskell in any depth, I might use monads as part of problem solving toolkit, and that might allow me to structure, say, a Ruby program with better data abstractions. But I can't really know that until I figure out what monads are all about. Note to self: learn Haskell.
+
+Of course, it goes deeper than language features: languages are more than just syntax trees. A lot more. In practice, languages are tightly coupled with standard libraries, platforms, and ecosystems. These are usually impedance-matched with the language itself; have you ever noticed that Java libraries tend to be verbose and explicit while Ruby libraries tend to be terse and slick? That extends to how the API interfaces are structured, the extension points, the level of programatic openness, everything. When you choose a language, you're also choosing a programming philosophy, because everything built for you is built with that philosophy.
+
+There are some good reasons you might build something in Java. But there are also an awful lot of bad ones, the greatest of which is that you just happen to know Java. So yeah, BB should maybe look more closely at that Python gig. And APH should think a bit harder about programming languages, and why they might be important.
