@@ -10,7 +10,7 @@ But then you start thinking about it:
 
  - Man do these WISYWYG editors blow. Wouldn't you rather be using a nice markup language, like maybe something similar to what [StackOverflow](http://stackoverflow.com) uses?
 
- - WP's admin interface is your content management system. But you're already very proficient with a much fancier, more powerful CMS; your source control system. You can use it from the command line instead of a clunky interface, and you can do a lot more with it. Why can't you use that?
+ - WP's admin interface is your content management system. But you're already very proficient with a much fancier, more powerful CMS: your source control system. You can use it from the command line instead of a clunky interface, and you can do a lot more with it. Why can't you use that?
 
  - Your posts live in a database somewhere that you don't really have access to.
 

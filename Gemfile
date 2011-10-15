@@ -7,6 +7,10 @@ gem 'redcarpet', '2.0.0b5'
 gem 'pygments.rb'
 gem 'twitter'
 gem 'twitter-text'
-gem 'ratom', :git => 'git://github.com/icambron/ratom.git'
+gem 'ratom'
 gem 'i18n'
-gem 'spandex', :git => 'git://github.com/icambron/spandex.git'
+gem 'spandex', :path => "~/Code/spandex"
+
+group :development do
+  gem 'shotgun'
+end
