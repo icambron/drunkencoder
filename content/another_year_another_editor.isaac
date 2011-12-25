@@ -12,29 +12,29 @@ The thing is, I hate Emacs. It's terrible at so many things. Its ecosystem is a 
 
 And yet...I come back to it every time. It's the editor I can't break up with. This is not because it has some special place in my heart; it's because every other editor really blows. They require you to use the mouse to do the most basic things. They throw weird dialogs at you, and those dialogs break all the conventions the rest of the editor uses. They think in files instead of buffers. They provide you cool autocomplete and go-to-definition features but ignore your need to actually edit text. They come with crummy defaults and then make them painful to change.
 
-All that, and I'm actually a *casual* Emacs user. I'm not one of those guys with 5000-line .emacs files who check their email in it. For all my time using, I'm a noob in Emacs land, struggling to efficiently edit text. It's just that it sucks less than other editors.
+All that, and I'm actually a *casual* Emacs user. I'm not one of those guys with 5000-line .emacs files who check their email in it. For all my time using it, I'm a noob in Emacs land, struggling to efficiently edit text. It's just that it sucks less than other editors.
 
 But that doesn't stop me from trying to do better. Here at Drunken Coder, we're always stumbling blindly into the arms of new, shiny editors, having sloppy one-night stands with them, and never calling them back.
 
 ## A brief history of time ##
 
-Sometimes those one night stands turn into flings, or get drawn out into rebound relationships driven by some particularly nasty fight with E (we're going to call it E from now, I've just decided). They're not necessarily any better than the quickly discarded JEdits and Bluefishes and so on; it's just that they stuck around somehow. Maybe it's just that they wanted me? Here are the ones who it to a second date:
+Sometimes those one-night stands turn into flings, or get drawn out into rebound relationships driven by some particularly nasty fight with E (we're going to call it E from now, I've just decided). They're not necessarily any better than the quickly discarded JEdits and Bluefishes and so on; it's just that they stuck around somehow. Maybe it's just that they wanted me? Here are the ones who made it to a second date:
 
  * Eclipse/RAD - It knows Java and understood the <s>Byzantine boondoggle</s> [sophisticated project](http://en.wikipedia.org/wiki/IBM_Workplace) I was working on. Otherwise, Eclipse is just a bloated, sluggish mess of menus and modes and clicking and NullPointerExceptions.
 
  * [SlickEdit](http://www.slickedit.com/products/slickedit) - It's great at editing text, is hugely customizable, and has a few [features](http://www.slickedit.com/products/slickedit/cool-features#surroundwith) I still miss. But it's ugly, the UI is awkward, the customizations are in a weird C-like language, and--when I used it--it couldn't parse non-ancient versions of C#. Oh, and it's expensive and you have to pay each year to keep up.
 
- * Visual Studio - Can parse C#, but is completely unhelpful without an [expensive third-party plugin](http://www.jetbrains.com/resharper/) (which is itself very nice). More importantly, VS may be the *worst text editor I've ever used*. Seriously, just awful. And out of contention anyway -- I don't run Windows.
+ * Visual Studio - Can parse C#, but is completely unhelpful without an [expensive third-party plugin](http://www.jetbrains.com/resharper/) (which is itself very nice). More importantly, VS may be the *worst text editor I've ever used*. Seriously, just awful. And out of contention anyway -- I don't run Windows anymore.
 
  * RubyMine - It's packed with nice Ruby features and it runs well on Linux, but it can't escape its Eclipse heritage. Too clunky.
 
- My number one issue with random editors, if you want to know the slightly inebriated and tangential truth, is that they don't treat their menus as first-class buffers. They've let you make whatever customizations you want to how text in the actual file is edited (ctrl+k for "kill line" or ctrl+~ ctrl+\ for "transpose then upcase then wrap in playful emoticons" or whatever), but those customizations don't work when you've brought out a little slidedown menu to autocomplete a file, because the guy who wrote it just used the system's text box control. It's fucking infuriating.
+ My number one issue with random editors, if you want to know the slightly inebriated and tangential truth, is that they don't treat their menus as first-class buffers. They've let you make whatever customizations you want to how text in the actual file is edited (ctrl+k for "kill line" or ctrl+~ ctrl+\ for "transpose then upcase then wrap in playful emoticons" or whatever), but those customizations don't work when you've called up a file switcher dialog, because the guy who wrote it just used the system's text box control. It's fucking infuriating.
 
 
 ## Sublime Text 2##
-I've been working in Rails and Node for almost two years now, and I'm once again tired of E. In fact, it's been doing this weird thing where sometimes the text disappears for no reason. Also, I have now tried every JS mode I can find and not one is even passable. I could debug all that or hack away at a JS mode it does what I want, but then again, I could also be doing that on the actual product I'm working on.
+I've been working in Rails and Node and random stuff for almost two years now, and I'm once again tired of E. In fact, it's been doing this weird thing where sometimes the text disappears for no reason. Also, I have now tried every JS mode I can find and not one is even passable. I could debug all that or hack away at a JS mode until it does what I want, but then again, I could also be hacking on something new and exciting instead of old and broken, or, you know, doing actual work.
 
-And of course, it's not like any of my old complaints about E have been magically fixed. That thing is stuck in time. It's like hunting with a musket.
+Of course, it's not like any of my old complaints about E have been magically fixed. That thing is stuck in time. It's like hunting with a musket.
 
 It's time for another breakup.
 
