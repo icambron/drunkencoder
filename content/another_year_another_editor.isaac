@@ -1,0 +1,76 @@
+Title: Another year, another editor
+Date: 2011/12/24
+Tags: Editors
+
+##The constant search ##
+
+I'm pretty much always looking for a new text editor. Every once in a while, I get pissed off at Emacs enough to sit down with a six-pack in the evening and see if I can, you know, use this damn thing. I usually last about 15 minutes before I go scurrying back to Emacs, tail between my legs and slightly drunk.
+
+[![Where I spend my day](/content/emacs_small.png)](/content/emacs.png)
+
+The thing is, I hate Emacs. It's terrible at so many things. Its ecosystem is a clusterfuck of poorly maintained modes and broken extensions. It's chalk full of  interface idiosyncrasies that make it painful to switch between it and other programs. The default keybindings require you to make a cat's cradle with your fingers. The shell is broken in half a dozen ways. ELisp is weird. And goddamn is Emacs slow.
+
+And yet...I come back to it every time. It's the editor I can't break up with. This is not because it has some special place in my heart; it's because every other editor really blows. They require you to use the mouse to do the most basic things. They throw weird dialogs at you, and those dialogs break all the conventions the rest of the editor uses. They think in files instead of buffers. They provide you cool autocomplete and go-to-definition features but ignore your need to actually edit text.
+
+All that, and I'm actually a *casual* Emacs user. I'm not one of those guys with 5000-line .emacs files who check their email in it. It's just that it sucks less than other editors.
+
+But that doesn't stop me from trying to do better. Here at Drunken Coder, we're always stumbling blindly into the arms of new, shiny editors, having sloppy one-night stands with them, and never calling them back.
+
+## A brief history of time ##
+
+Sometimes those one night stands turn into flings, or get drawn out into rebound relationships driven by some particularly nasty fight with E (we're going to call it E from now, I've just decided). They're not necessarily any better than the quickly discarded JEdits and Bluefishes and so on, just that they stuck around somehow. Maybe it's just that they wanted me? Here are the ones who it to a second date:
+
+ * Eclipse/RAD - It knows Java and understood the <s>maze-like boondoggle</s> [sophisticated project](http://en.wikipedia.org/wiki/IBM_Workplace) I was working on. Otherwise, it's just a bloated, sluggish mess of menus and modes and clicking.
+
+ * [SlickEdit](http://www.slickedit.com/products/slickedit) - It's great at editing text, is hugely customizable, and has a few [features](http://www.slickedit.com/products/slickedit/cool-features#surroundwith) I still miss. But it's ugly, the UI is awkward, the customizations are in a weird C-like language, and--when I used it--it couldn't parse non-ancient versions of C#. Oh, and it's expensive and you have to pay each year to keep up.
+
+ * Visual Studio - Can parse C#, but is completely unhelpful without an [expensive third-party plugin](http://www.jetbrains.com/resharper/). And it may be the *worst text editor I've ever used*. Seriously, do you write code with a mouse?
+
+ * RubyMine - It's packed with nice Ruby features and it runs well on Linux, but it can't escape its Eclipse heritage.
+
+ My number one issue with random editors, if you want to know the slightly inebriated truth, is that they don't treat their menus as first-class buffers. They've let you make whatever customizations you want to how text in the actual file is edited (ctrl+k for "kill line" or ctrl+~ ctrl+\ for "transpose then upcase then wrap in playful emoticons" or whatever), but those customizations don't work when you've brought out a little slidedown menu to autocomplete a file, because the guy who wrote it just used the system's text box widget. It's fucking infuriating.
+
+
+## Sublime Text 2##
+I've been working in Rails and Node for almost two years now, and I'm once again tired of E. In fact, it's been doing this weird thing where sometimes the text disappears for no reason. Also, I have now tried every JS mode I can find and not one is even passable. I could debug all that or hack away at a JS mode it does what I want, but then again, I could also be doing that on the actual product I'm working on.
+
+And of course, it's not like any of my old complaints about E have been magically fixed. That thing is stuck in time. It's time for another breakup.
+
+Enter the new flavor of the week. [Sublime Text 2](http://www.sublimetext.com/) is gorgeous, fast, and customizable. And it's made it past round 1: can I stand it?
+
+[![Subliminal messages](/content/sublime_small.png)](/content/sublime.png)
+
+Bullet points? Bullet points:
+
+ * It's really clean and acts like a real text editor.
+
+ * It uses TextMate language modes, so it taps into a big existing ecosystem (I've been amazed at how much better its understanding of Ruby is than my Emacs mode).
+
+ * It's got that cool minimap. I can't even imagine how that would ever be useful, but it's sexy as hell. 
+
+ * The file switching and code browsing is quite good, though I'd rather get rid of the tabs and groups and just have a list of open files.
+
+ * You customize it in Python and there seems to be a solid community around that.
+
+## The long hard road out of Hell ##
+
+Switching editors is really hard, and I'm not where I want to be with Sublime yet. Partially that's my desire to go whole-hog. For example I'd like to give up the ctrl+x prefix on commands (I'm sick of mindlessly hitting them in other programs) even though I think they're mostly reasonable. So there's a steeper learning curve and I keep accidentally closing buffers trying to do kill-region, or cutting text while trying to save a file. It would be like coding drunk if I weren't already coding drunk. 
+
+I also need to get it customized to where I'm actually reasonably productive relative to E, regardless of how painful E is. That's a big time investment and one of the reasons I've dropped many would-be editors. It doesn't help that the Sublime documentation is almost non-existent and you have to glean even the basic customization paradigm from the support forums. (I'm sure it's harder for me; I have the feeling most of the user base is TextMate converts and have some relevant prior knowledge.)
+
+And I already have complaints:
+
+ * I can't seem to make misspelled words not show up in retina-searing red. 
+   * Oh, and there seems to be some sort of bug about spell-checking words in brackets.
+
+ * I can't run a terminal in it (for Linux anyway; it has one for Mac). 
+
+ * I don't know how to override parts of a theme without forking the whole theme. 
+
+ * The mark/kill/yank stuff is poorly implemented and I had to pull in a plugin just for that.
+
+ * It's a tiny bit weird with line wraps.
+
+ * There's what I suspect is Linux-specific clunkiness in opening files and projects.
+
+So we'll see. I might be slinking back to Emacs a few weeks.
