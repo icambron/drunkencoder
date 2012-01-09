@@ -14,7 +14,7 @@ See, formatting date ranges so they can be read naturally isn't very easy. The g
 Jan 26, 7:00 PM - Jan 26, 9:00 PM
 ```
 
-Which isn't something you'd ever say. But it's what happens when you treat a date range as nothing more than two dates, call `toString()` on each one, and then join them with a dash. It's easy, so everyone does it.
+Which isn't something you'd ever say, but it's what happens when you treat a date range as nothing more than two dates, call `toString()` on each one, and then join them with a dash. It's easy, so everyone does it.
 
 But what I want to say is:
 
