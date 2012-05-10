@@ -25,6 +25,11 @@ class Post < Base
           end
         end
       end
+
+      div class: "history" do
+        a "Page history", href: "https://github.com/icambron/drunkencoder/commits/master/content#{@model.path}.isaac"
+      end
+
       if @show_comments
         div :id => "disqus_thread" do
           if Sinatra::Application.environment == :development
