@@ -28,8 +28,8 @@ GEM
     multi_json (1.0.4)
     multipart-post (1.1.4)
     polyglot (0.3.3)
-    pygments.rb (0.2.4)
-      rubypython (~> 0.5.3)
+    pygments.rb (0.2.3)
+      rubypython (>= 0.5.1)
     rack (1.4.1)
     rack-protection (1.2.0)
       rack
@@ -37,7 +37,7 @@ GEM
     ratom (0.6.10)
       libxml-ruby (>= 1.1.2)
     redcarpet (2.0.0b5)
-    rubypython (0.5.3)
+    rubypython (0.5.1)
       blankslate (>= 2.1.2.3)
       ffi (~> 1.0.7)
     sass (3.1.12)
@@ -87,9 +87,10 @@ PLATFORMS
 DEPENDENCIES
   erector
   foreman
-  pygments.rb
+  pygments.rb (= 0.2.3)
   ratom
   redcarpet
+  rubypython (= 0.5.1)
   sass
   shotgun
   sinatra

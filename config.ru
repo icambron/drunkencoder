@@ -5,6 +5,9 @@ ROOT = File.expand_path(File.dirname(__FILE__))
 $:.unshift ROOT
 Dir.chdir(ROOT)
 
+#for dealing with heroku
+(ENV["RACK_ENV"] == 'development')? RubyPython.start(:python_exe => "python2.7") : RubyPython.start(:python_exe => "python2.6") 
+
 ["lib", "views"].each do |dir|
   Dir["#{dir}/**/*.rb"].each do |file|
     require file

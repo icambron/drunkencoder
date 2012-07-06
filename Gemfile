@@ -9,7 +9,9 @@ gem 'erector'
 gem 'sass'
 gem 'uglifier'
 gem 'redcarpet'
-gem 'pygments.rb'
+
+gem 'rubypython', "0.5.1"
+gem 'pygments.rb', "0.2.3"
 
 gem 'twitter'
 gem 'twitter-text'
