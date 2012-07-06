@@ -10,3 +10,4 @@ tmp/**/*
 bin/**
 .sass-cache/**
 .env
+.sublime.sublime-workspace
