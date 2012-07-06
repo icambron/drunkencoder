@@ -3,7 +3,7 @@ require_relative 'base'
 class Recent < Base
   def content
     div do
-      h2 "Recent Posts"
+      h2 "Recent posts"
       ul do
         @recent.each do |post|
           li class: "icon-glass" do
