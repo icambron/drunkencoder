@@ -23,10 +23,14 @@ class Post < Base
       div class: "post-tags" do
         span "Tags: "
         @model.tags.each do |tag|
-          span do
-            a tag, href: "/archive?tag=#{tag}"
-            span ", " if tag != @model.tags.last
+          a class: "tag", href: "/archive?tag=#{tag}" do
+            span class: "label label-info" do
+              i class: "icon-tag"
+              span " "
+              span tag
+            end
           end
+          rawtext "&nbsp;"
         end
       end
 
