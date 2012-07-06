@@ -21,7 +21,6 @@ class Post < Base
       end
 
       div class: "post-tags" do
-        span "Tags: "
         @model.tags.each do |tag|
           a class: "tag", href: "/archive?tag=#{tag}" do
             span class: "label label-info" do
