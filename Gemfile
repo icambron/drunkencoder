@@ -1,4 +1,4 @@
-source 'http://gemcutter.org'
+source :rubygems
 
 gem 'thin'
 
@@ -25,5 +25,4 @@ gem 'sprockets-sass'
     
 group :development do
   gem 'foreman'
-  gem 'shotgun'
 end
