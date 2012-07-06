@@ -67,7 +67,10 @@ class Layout < Base
             end
 
             div class: "span3 visible-desktop" do
-              h2 "What"
+              h2 "What this is"
+
+              img src: "/images/isaac.jpg"
+
               p "Isaac Cambron. He's a geek. He drinks a lot. This is his blog."
 
               ul do

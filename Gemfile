@@ -1,5 +1,3 @@
-source :rubygems
-
 gem 'thin'
 
 gem 'sinatra'
@@ -24,5 +22,6 @@ gem 'sprockets-helpers'
 gem 'sprockets-sass'
     
 group :development do
+  gem 'rerun'
   gem 'foreman'
 end

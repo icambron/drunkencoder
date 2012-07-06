@@ -3,7 +3,8 @@
         [
                 {
                         "path": ".",
-                        "file_exclude_patterns" : ["*~", "#*", ".gitkeep"]
+                        "file_exclude_patterns" : ["*~", "#*", ".gitkeep"],
+                        "folder_exclude_patterns" : [".sass-cache"]
                 }
         ]
 }
