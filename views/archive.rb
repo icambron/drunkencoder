@@ -9,7 +9,7 @@ class Archive < Layout
     h1 @title
     ul do
       @posts.each do |post|
-        li do
+        li class: "icon-glass" do
           widget PostSummary.new(:post => post)
         end
       end

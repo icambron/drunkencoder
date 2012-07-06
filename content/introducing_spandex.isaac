@@ -52,9 +52,9 @@ some_posts.each do |post|
 end
 ```
 
-How do you make these awesome posts about aardvarks? Here's omg_aardvarks.md:
+How do you make these awesome posts about aardvarks? Here's `omg_aardvarks.md`:
 
-```
+```text
 Title: Oh my God I saw some aardvarks!
 Tags: aardvarks, things i saw today
 Date: 2011/9/2011
@@ -94,7 +94,7 @@ Let's get to work. We've got our spandex on, so now we just need to build a webs
       +- page.haml        # Display and individual post and its comments
 ```
         
-So, app.rb handles the web requests:
+So, `app.rb` handles the web requests:
 
 ```ruby
 require 'sinatra'
@@ -129,7 +129,7 @@ get '*' do
 end
 ```
 
-The Haml files are also pretty simple. I won't cover all of the details, but here's page.haml:
+The Haml files are also pretty simple. I won't cover all of the details, but here's `page.haml`:
 
 ```haml
 %h2

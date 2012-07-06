@@ -1,0 +1,6 @@
+[submodule "vendor/bootstrap-sass"]
+	path = vendor/bootstrap-sass
+	url = git://github.com/thomas-mcdonald/bootstrap-sass.git
+[submodule "vendor/font-awesome-sass-rails"]
+	path = vendor/font-awesome-sass-rails
+	url = git://github.com/littlebtc/font-awesome-sass-rails.git

@@ -2,11 +2,11 @@ require 'views/base'
 
 class Tags < Base
   def content
-    div :class => "widgety_thing" do
+    div do
       h2 "Tags"
-      ul :class => "tags_list" do
+      ul do
         @tags.each do |tag|
-          li do
+          li class: "icon-tag" do
             a tag, :href => "archive?tag=#{tag}"
           end
         end

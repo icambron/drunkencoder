@@ -54,7 +54,7 @@ twix.format({
   groupMeridiems: false,
   spaceBeforeMeridiem: false,
   meridiemFormat: "a",
-})                                     //=> January 26th, 7pm - 9pm
+})                            //=> Thursday January 26th, 7pm - 9pm
 ```
 
 It can also handle all sorts of different range sizes as well as all-day events.

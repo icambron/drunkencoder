@@ -2,11 +2,11 @@ require_relative 'base'
 
 class Recent < Base
   def content
-    div :class => "widgety_thing" do
+    div do
       h2 "Recent Posts"
-      ul :class => "recent_list" do
+      ul do
         @recent.each do |post|
-          li do
+          li class: "icon-glass" do
             widget PostSummary.new(:post => post)
           end
         end

@@ -4,11 +4,11 @@ require 'views/base'
 class Tweets < Base
   include Twitter::Autolink
   def content
-    div :class => "widgety_thing" do
+    div do
       h2 "Twitter"
-      ul :class => "tweet_list" do
+      ul do
         @tweets.each do |tweet|
-          li do
+          li class: "icon-twitter-sign" do
             rawtext auto_link(tweet.text)
           end
         end

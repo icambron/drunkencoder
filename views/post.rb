@@ -2,25 +2,29 @@ require 'views/base'
 
 class Post < Base
   def content
-    div :class => "post" do
+    div class: "post" do
 
-      a :href => @model.path do
-        h1 @model.title
+      a href: @model.path do
+        h1 do
+          i class: "icon-glass"
+          span " "
+          span @model.title
+        end
       end
 
       if @model.date
-        div "Published #{cal_date @model.date}", :class => "post_date"
+        h3 cal_date(@model.date)
       end
       
-      div :class => "actual_blog_content" do 
+      div class: "actual-blog-content" do 
         rawtext @model.body
       end
 
-      div :class => "post_tags" do
+      div class: "post-tags" do
         span "Tags: "
         @model.tags.each do |tag|
           span do
-            a tag, :href => "/archive?tag=#{tag}"
+            a tag, href: "/archive?tag=#{tag}"
             span ", " if tag != @model.tags.last
           end
         end
@@ -31,19 +35,19 @@ class Post < Base
       end
 
       if @show_comments
-        div :id => "disqus_thread" do
+        div id: "disqus-thread" do
           if Sinatra::Application.environment == :development
             javascript 'var disqus_developer = true;'
           end
-          script :type => 'text/javascript', :src => "http://drunkencoder.disqus.com/embed.js", :async => true
+          script type: 'text/javascript', src: "http://drunkencoder.disqus.com/embed.js", async: true
           
           noscript do
-            a "view comments", :href => "http://drunkencoder.disqus.com/enbed.js?url=ref"
+            a "view comments", href: "http://drunkencoder.disqus.com/enbed.js?url=ref"
           end
         end
       else
-        div :id => "view_comments" do
-          a "View comments", :href => @model.path + "#disqus_thread"
+        div id: "view_comments" do
+          a "View comments", href: @model.path + "#disqus_thread"
         end
       end
     end
