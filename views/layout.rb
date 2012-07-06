@@ -9,6 +9,11 @@ class Layout < Base
         css "/assets/application.css"
         link href: "/feed.xml", rel: "alternate", type: "application/atom+xml"
         script src: "assets/application.js"
+
+        rawtext "<!--[if lt IE 9]>"
+        rawtext '<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>'
+        rawtext '<![endif]-->'
+
       end
 
       body do
