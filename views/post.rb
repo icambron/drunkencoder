@@ -35,7 +35,7 @@ class Post < Base
       end
 
       if @show_comments
-        div id: "disqus-thread" do
+        div id: "disqus_thread" do
           if Sinatra::Application.environment == :development
             javascript 'var disqus_developer = true;'
           end
