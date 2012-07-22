@@ -22,7 +22,7 @@ I could get around this by by setting a mark, going where I want to go, using th
 
 Slight aside: I've been using [EmacsKillRing plugin](https://github.com/stiang/EmacsKillRing) that partially fixes at least the cut/paste part of this and adds some other Emacsy goodness, but it doesn't really solve the issue that the region isn't a first-class selection, and it has plenty of other issues too.
 
-Anyway, what I want--I think, anyway--is just select lock. Instead of set_mark, I just want to say:
+Anyway, what I want--I think, anyway--is just a select lock command. Instead of set_mark, I just want to say:
 
 > Look, I want my selection to start here. Wherever I go with caret, have the selection follow me, like how it does if I hit shift+up. Then treat my actions like you normally would. Cut cuts, Copy copies, etc.
 
@@ -48,7 +48,7 @@ While it can occasionally be useful to see different parts of a file side by sid
 
 What Sublime should really do is *move* the file to the current group if it's open already.
 
-## Deleting files should close the file ##
+## Deleting a file should close the file ##
 
 This is the issue that probably causes me the most anguish on a day-to-day basis. You can delete files by right-clicking them off the side bar and clicking delete. Except that it's not. If you have the file open, it'll stay open. "Fine", you say, and close it. But ST will think "Hmm, that file is different on disk, in that it doesn't exist there. I'd better confirm Isaac really doesn't want to save this!" and gives me a dialog about whether I want to save the file I JUST DELETED. Like, my intention is literally the opposite of what you're asking about. In fact, it'll do this even if I don't have the file open, because when I right-click on the side bar item, ST opens it in a sort of preview mode, which is normally superuseful, but annoying here because when I close the preview I have to deal with this goddamn dialog.
 
