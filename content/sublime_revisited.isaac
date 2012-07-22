@@ -6,6 +6,8 @@ I've been [using Sublime Text 2](/another_year_another_editor) for 7 months now,
 
 If any of this sounds nitpicky, I should point out that I spent like 10 hours per day in this program, so what might seem like minor nuisances add up very quickly. Programming is really just a particular kind of text editing, and we ought to have really well-oiled text editor programs. That's partially for efficiency, and that's partly for our happiness. If you were to respond to that by pointing out that if I feel that way, I should really invest more time customizing my editor, I wouldn't disagree. I should probably dig in, learn my way around the API super well, and make it do what I want it to do. But since it's easier to complain about it on the internet, I'm going to do that. Then I'll look into fixing it.
 
+It may also be that there are configuration options I don't about that could fix this stuff. If so, I'd love to hear them.
+
 Here's my laundry list.
 
 ## I want set_mark, yank, and so on to work a bit differently ##
