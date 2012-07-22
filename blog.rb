@@ -66,7 +66,7 @@ class Blog < Sinatra::Base
   #articles
   get '*' do
     post = @@spandex.get(params[:splat][0])
-    if post
+    if post && !post.draft?
       render_class PostPage, :post => post
     else 
       404
