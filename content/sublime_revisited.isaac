@@ -20,7 +20,7 @@ Sublime has support for this: you can set a mark, you can kill the region, you c
 
 I could get around this by by setting a mark, going where I want to go, using the select_region command, and then cutting. Then I could always use paste. That would work, but it's an extra command (and keybinding) just to kill some text. It's also a deeper problem than just kill/cut: more complicated manifestation is that I can't use to create a region and then hit Tab to add a tab to each line, because that command works on the selection, not this weird other region thing. The issue is that regions and selections are different things.
 
-Slight aside: I've been using [EmacsKillRing puglin](https://github.com/stiang/EmacsKillRing) that partially fixes at least the cut/paste part of this and adds some other Emacsy goodness, but it doesn't really solve the issue that the region isn't a first-class selection, and it has plenty of other issues too.
+Slight aside: I've been using [EmacsKillRing plulin](https://github.com/stiang/EmacsKillRing) that partially fixes at least the cut/paste part of this and adds some other Emacsy goodness, but it doesn't really solve the issue that the region isn't a first-class selection, and it has plenty of other issues too.
 
 Anyway, what I want--I think, anyway--is just select lock. Instead of set_mark, I just want to say:
 
