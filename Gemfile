@@ -20,8 +20,8 @@ gem 'spandex'
 gem 'sprockets'
 gem 'sprockets-helpers'
 gem 'sprockets-sass'
-    
+
 group :development do
-  gem 'rerun'
+  gem 'shotgun'
   gem 'foreman'
 end
