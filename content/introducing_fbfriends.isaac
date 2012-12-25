@@ -4,8 +4,10 @@ Tags: javascript, project intro
 
 FbFriends is a new jQuery plugin for picking Facebook friends from a
 dialog using the Facebook JS SDK. It's written in CoffeeScript and Less;
-you can find the docs [here](http://icambron.github.com/fbfriends) and
+you can find the docs and demos [here](http://icambron.github.com/fbfriends) and
 the code [here](http://github.com/icambron/fbfriends).
+
+For the lazy, here's a screenshot (and apologies to my friends who showed up here):
 
 ![FbFriends](/content/fbfriends_screen.png)
 
