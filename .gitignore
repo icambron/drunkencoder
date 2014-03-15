@@ -1,13 +1,1 @@
-.bundle
-db/*.sqlite3
-log/*.log
-tmp/**/*
-*~
-*flymake*
-*#
-#*
-.#*
-bin/**
-.sass-cache/**
-.env
-.sublime.sublime-workspace
+
